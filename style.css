@@ -1,0 +1,72 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Clean, modern font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;  /* Light background for the page */
+}
+.flashcard-container {
+    width: 600px;  /* Increased width */
+    height: 700px;  /* Increased height */
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.card {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    position: absolute;
+    backface-visibility: hidden;
+    cursor: pointer;
+    border-radius: 15px;  /* Rounded corners */
+}
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    padding: 20px;
+    box-sizing: border-box;  /* Ensure padding is included in width/height calculation */
+    overflow: auto;  /* Allow content to scroll */
+    border-radius: 15px;  /* Rounded corners */
+}
+.front {
+    background-color: #a2c8f0;  /* Soft baby blue for front */
+    border: 1px solid #7aa9d6;
+    text-align: center;  /* Center the question */
+    font-family: 'Georgia', serif;  /* Prettier font for the question */
+    font-weight: bold;
+    font-size: 24px;  /* Larger text for question */
+    color: #2c3e50;  /* Darker color for text */
+}
+.back {
+    background-color: #b9d7f2;  /* Light blue for the back */
+    transform: rotateY(180deg);
+    border: 1px solid #7aa9d6;
+}
+pre {
+    background-color: #ffffff;  /* Light background for code */
+    color: #333333;  /* Dark text for readability */
+    padding: 15px;
+    border-radius: 5px;
+    overflow: auto;
+    max-width: 100%;
+    max-height: 90%;  /* Limit max height to keep the card readable */
+    word-wrap: break-word;
+    white-space: pre-wrap;  /* Allow long lines to wrap */
+    font-family: 'Courier New', Courier, monospace;  /* Monospace font for code */
+    font-size: 16px;
+}
+code {
+    color: #333333;
+}
