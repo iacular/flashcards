@@ -1,3 +1,4 @@
+/* Body Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Clean, modern font */
     display: flex;
@@ -5,8 +6,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f4;  /* Light background for the page */
+    background-color: #00008B;  /* Dark blue background */
 }
+
+/* Flashcard Container */
 .flashcard-container {
     width: 600px;  /* Increased width */
     height: 700px;  /* Increased height */
@@ -16,6 +19,8 @@ body {
     align-items: center;
     position: relative;
 }
+
+/* Card Styles */
 .card {
     width: 100%;
     height: 100%;
@@ -26,6 +31,8 @@ body {
     cursor: pointer;
     border-radius: 15px;  /* Rounded corners */
 }
+
+/* Front of the Card (Question) */
 .front, .back {
     position: absolute;
     width: 100%;
@@ -40,20 +47,26 @@ body {
     overflow: auto;  /* Allow content to scroll */
     border-radius: 15px;  /* Rounded corners */
 }
+
+/* Front of the card (Question styling with code-like font) */
 .front {
     background-color: #a2c8f0;  /* Soft baby blue for front */
     border: 1px solid #7aa9d6;
     text-align: center;  /* Center the question */
-    font-family: 'Georgia', serif;  /* Prettier font for the question */
+    font-family: 'Courier New', Courier, monospace;  /* Code-like font */
     font-weight: bold;
     font-size: 24px;  /* Larger text for question */
     color: #2c3e50;  /* Darker color for text */
 }
+
+/* Back of the card (Answer) */
 .back {
     background-color: #b9d7f2;  /* Light blue for the back */
     transform: rotateY(180deg);
     border: 1px solid #7aa9d6;
 }
+
+/* Code Block Styling */
 pre {
     background-color: #ffffff;  /* Light background for code */
     color: #333333;  /* Dark text for readability */
@@ -67,6 +80,17 @@ pre {
     font-family: 'Courier New', Courier, monospace;  /* Monospace font for code */
     font-size: 16px;
 }
+
+/* Code Styling */
 code {
     color: #333333;
+}
+
+/* Flip Effect */
+.card.flipped .front {
+    transform: rotateY(180deg);
+}
+
+.card.flipped .back {
+    transform: rotateY(0deg);
 }
